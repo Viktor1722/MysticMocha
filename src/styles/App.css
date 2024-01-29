@@ -1,0 +1,65 @@
+body {
+  background-image: url(../assets/Bg.svg);
+  background-repeat: no-repeat;
+  font-family: Arial, sans-serif;
+  display: flex;
+  justify-content: center;
+  align-items: center;
+  width: 100vw;
+  height: 100vh;
+  margin: 0;
+}
+
+.container {
+  text-align: center;
+}
+
+.title,
+.fortune-display {
+  color: #ffff;
+}
+
+.submit-button {
+  background-color: #ffff;
+  border: none;
+  border-radius: 15px;
+  color: #000000;
+  padding: 10px 20px;
+  margin: 12px;
+}
+
+.links-to-socialmedia {
+  display: flex;
+  justify-content: center;
+  align-items: center;
+  flex-direction: column;
+}
+
+.submit-icon-box {
+  background-color: #ffff;
+  color: #000000;
+  border-radius: 20px;
+  display: flex;
+  justify-content: center;
+  align-items: center;
+  padding: 6px;
+}
+
+.links-box,
+a {
+  display: flex;
+  margin: 5px;
+}
+
+.flip-card-box {
+  display: flex;
+  justify-content: center;
+}
+
+/*   "&:hover": {
+            backgroundColor: "#fff",
+            },
+            "&:active": {
+            boxShadow: "none",
+            backgroundColor: "#fff",
+            },*/
