@@ -1,23 +1,23 @@
 import React, { useState, useEffect } from "react";
 import FlipCard from "./cardFlip";
 import planFeatures from "./planConfig";
+import { getFirestore, collection, addDoc } from "firebase/firestore";
+import { db } from "./fiteBaseConfig";
 
-const wishes = [
-  "Да бъдеш здрав и щастлив всеки ден на живота си!",
-  "Нека всяко утро ти донесе усмивка и радост.",
-  "Животът да ти е пълен със смех, обич и успехи.",
-  "Да откриеш красотата във всеки един ден.",
-  "Здраве, любов и спокойствие – основният триедин на щастлив живот.",
-  "Нека всяка твоя стъпка бъде стъпка към постижения и удовлетворение.",
-  "Да те заобиколи положителната енергия и благополучие.",
-  "Бъди като птица – лека, свободна и пълна с радост.",
-  "Светлина и успехи в твоя житейски път!",
-  "Да откриеш радостта в малките неща и внимание в големите.",
-];
+const db = getFirestore();
+
+try {
+  const docRef = await addDoc(collection(db, "wishes"), {
+    allWishes: wishes,
+  });
+  console.log("Document written with ID: ", docRef.id);
+} catch (e) {
+  console.error("Error adding document: ", e);
+}
 
 function MainPage() {
   const [fortune, setFortune] = useState("");
-  const [userPlan, setUserPlan] = useState("basic");
+  const [userPlan, setUserPlan] = useState("premium");
 
   useEffect(() => {
     const randomIndex = Math.floor(Math.random() * wishes.length);
@@ -127,9 +127,6 @@ function MainPage() {
           </div>
         </div>
       )}
-      <button className="submit-button">
-        <b>Към книгата с отзиви</b>
-      </button>
     </div>
   );
 }
