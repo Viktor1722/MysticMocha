@@ -1,18 +1,13 @@
 import React, { useState, useEffect } from "react";
 import FlipCard from "./cardFlip";
 import planFeatures from "./planConfig";
-import { getFirestore, collection, addDoc } from "firebase/firestore";
+import { getFirestore, collection, getDocs } from "firebase/firestore";
 import { db } from "./fireBaseConfig";
 
 function MainPage() {
   const [fortune, setFortune] = useState("");
   const [userPlan, setUserPlan] = useState("premium");
   const [wishes, setWishes] = useState([]);
-
-  useEffect(() => {
-    const randomIndex = Math.floor(Math.random() * wishes.length);
-    setFortune(wishes[randomIndex]);
-  }, []);
 
   useEffect(() => {
     const params = new URLSearchParams(window.location.search);
@@ -24,20 +19,31 @@ function MainPage() {
 
   useEffect(() => {
     const fetchWishes = async () => {
-      const querySnapshot = await getDocs(collection(db, "wishes"));
-      const fetchedWishes = querySnapshot.docs.map((doc) => doc.data().text); // Assuming each document has a 'text' field
-      setWishes(fetchedWishes);
+      try {
+        const querySnapshot = await getDocs(collection(db, "wishes"));
+        if (!querySnapshot.empty) {
+          const wishesDoc = querySnapshot.docs[0];
+          if (wishesDoc.exists()) {
+            const fetchedWishes = wishesDoc.data().wishes;
+            setWishes(fetchedWishes);
+
+            const randomIndex = Math.floor(
+              Math.random() * fetchedWishes.length
+            );
+            const randomWish = fetchedWishes[randomIndex];
+            setFortune(randomWish);
+            console.log("Random wish:", randomWish);
+          }
+        } else {
+          console.log("No documents found in 'wishes' collection");
+        }
+      } catch (error) {
+        console.error("Error fetching wishes:", error);
+      }
     };
 
     fetchWishes();
   }, []);
-
-  useEffect(() => {
-    if (wishes.length > 0) {
-      const randomIndex = Math.floor(Math.random() * wishes.length);
-      setFortune(wishes[randomIndex]);
-    }
-  }, [wishes]);
 
   const featureAccess = planFeatures[userPlan];
   const twitterShareUrl = `https://twitter.com/intent/tweet?text=${encodeURIComponent(
