@@ -47,8 +47,8 @@ function MainPage() {
 
   const featureAccess = planFeatures[userPlan];
   const twitterShareUrl = `https://twitter.com/intent/tweet?text=${encodeURIComponent(
-    fortune
-  )}`;
+    document.location.href
+  )}&quote=${encodeURIComponent(fortune)}`;
   const facebookShareUrl = `https://www.facebook.com/sharer/sharer.php?u=${encodeURIComponent(
     document.location.href
   )}&quote=${encodeURIComponent(fortune)}`;
