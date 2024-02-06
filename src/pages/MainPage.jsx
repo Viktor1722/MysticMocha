@@ -66,7 +66,7 @@ function MainPage() {
   }, []);
 
   const goToSharePage = () => {
-    navigate("/share"); // Use the path you defined for SharePage in App.jsx
+    navigate("/share", { state: { wish: fortune } }); // Pass fortune as state
   };
 
   const featureAccess = planFeatures[userPlan];

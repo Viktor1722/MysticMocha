@@ -1,0 +1,45 @@
+.container {
+  display: flex;
+  flex-direction: column;
+  align-items: center;
+}
+
+.share-card {
+  width: 290px;
+  height: 370px;
+  background-color: #32323285;
+  border-radius: 20px;
+  padding-top: 30px;
+}
+
+.wish-container {
+  display: flex;
+  justify-content: center;
+  flex-direction: column;
+  align-items: center;
+}
+
+.wishes {
+  width: 220px;
+  margin-top: 20px;
+}
+
+.mystic-mocha {
+  display: flex;
+  margin-top: 10px;
+  font-size: small;
+  align-items: center;
+  filter: opacity(0.8);
+}
+
+.mystic-mocha img {
+  margin: 10px;
+  width: 35px;
+}
+
+.share-container {
+  background-color: #252525;
+  width: 100vw;
+  height: 30vh;
+  margin-top: 154px;
+}

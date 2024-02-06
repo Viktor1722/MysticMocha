@@ -3,7 +3,7 @@ import React from "react";
 import { BrowserRouter as Router, Route, Routes } from "react-router-dom";
 import MainPage from "./pages/MainPage";
 import SharePage from "./pages/SharePage";
-
+import "./styles/SharePage.css";
 import "./styles/App.css";
 
 function App() {
