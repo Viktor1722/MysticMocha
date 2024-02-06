@@ -1,9 +1,5 @@
 import React, { useState, useEffect } from "react";
 import FlipCard from "./cardFlip";
-import planFeatures from "../planConfig";
-import { getFirestore, collection, getDocs } from "firebase/firestore";
-import { db } from "../fireBaseConfig";
-import html2canvas from "html2canvas";
 import { useNavigate } from "react-router-dom";
 
 function MainPage() {

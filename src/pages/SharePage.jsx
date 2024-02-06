@@ -1,6 +1,7 @@
 import React from "react";
 import { useLocation } from "react-router-dom";
 import FlipCard from "./cardFlip";
+
 import logo from "../assets/mysticMocha.svg";
 
 const SharePage = () => {
