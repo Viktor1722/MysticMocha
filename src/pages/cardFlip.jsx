@@ -1,5 +1,5 @@
 import React, { useState } from "react";
-import "./styles/cardFlip.css";
+import "../styles/cardFlip.css";
 
 const CardFlip = ({ wish }) => {
   const [isFlipped, setIsFlipped] = useState(false);

@@ -36,6 +36,16 @@ body {
   padding: 6px;
 }
 
+.google-review {
+  background-color: #ffff;
+  color: #000000;
+  border-radius: 20px;
+  display: flex;
+  justify-content: center;
+  align-items: center;
+  padding: 6px;
+}
+
 .links-box,
 a {
   display: flex;
