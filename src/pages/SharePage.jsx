@@ -24,22 +24,47 @@ const SharePage = () => {
   const googleReviewLink =
     "https://www.google.com/maps/place/[https://www.google.com/maps/place/Cherry+by+Mary/@43.2075205,27.9218619,53m/data=!3m1!1e3!4m6!3m5!1s0x40a4551d2e10fb85:0x518af4d8d4b7711!8m2!3d43.2074796!4d27.9217361!16s%2Fg%2F11qz39lctt?entry=ttu";
 
-  useEffect(() => {
-    console.log(wish); // Debugging line to check if wish is received
-  }, [wish]);
+  useEffect(() => {}, [wish]);
+
+  const handleSnapshotAndRedirect = (redirectUrl) => {
+    const element = document.querySelector(".snapshot-area");
+    if (element) {
+      html2canvas(element).then((canvas) => {
+        // Convert the canvas to a data URL
+        const image = canvas
+          .toDataURL("image/png")
+          .replace("image/png", "image/octet-stream");
+
+        // Create a temporary link to trigger the download
+        const link = document.createElement("a");
+        link.download = "snapshot.png"; // You can name the file anything you want
+        link.href = image;
+        document.body.appendChild(link);
+        link.click();
+        document.body.removeChild(link);
+
+        // Delay the redirect to ensure the download dialog appears
+        setTimeout(() => {
+          window.location.href = redirectUrl;
+        }, 100); // Adjust delay as needed
+      });
+    }
+  };
 
   return (
     <div className="container">
-      <div className="share-card">
-        <div className="wish-container">
-          <FlipCard />
-          <h1 className="wishes">{wish}</h1>
-        </div>
-        <div className="mystic-mocha">
-          <img src={logo} />
-          <b>
-            <p>Mystic Mocha</p>
-          </b>
+      <div className="snapshot-area">
+        <div className="share-card">
+          <div className="wish-container">
+            <FlipCard />
+            <h1 className="wishes">{wish}</h1>
+          </div>
+          <div className="mystic-mocha">
+            <img src={logo} alt="mystic mocha logo" />
+            <b>
+              <p>Mystic Mocha</p>
+            </b>
+          </div>
         </div>
       </div>
       <div className="share-container">
@@ -69,7 +94,9 @@ const SharePage = () => {
               </a>
 
               <a
-                href="https://www.instagram.com//"
+                onClick={() =>
+                  handleSnapshotAndRedirect("https://www.instagram.com")
+                }
                 target="_blank"
                 className="submit-icon-box"
               >
