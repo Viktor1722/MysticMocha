@@ -1,14 +1,24 @@
 .container {
   display: flex;
   flex-direction: column;
+  justify-content: center;
   align-items: center;
+  width: 100vw;
+  height: 100vh;
+  margin: 0;
+  padding: 0;
 }
 
 .snapshot-area {
-  width: 350px;
-  height: 450px;
-  padding-left: 60px;
-  padding-top: 70px;
+  background-image: url("../assets/Bg.svg");
+  background-repeat: no-repeat;
+  background-size: cover;
+  background-position: center;
+  width: 100vw;
+  height: 100vh;
+  display: flex;
+  justify-content: center;
+  align-items: center;
 }
 
 .share-card {
@@ -18,8 +28,6 @@
   border-radius: 20px;
   padding-top: 30px;
   margin-bottom: 50px;
-  position: relative;
-  bottom: 55px;
 }
 
 .wish-container {

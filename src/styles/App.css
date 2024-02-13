@@ -1,5 +1,9 @@
 body {
-  background-image: url(../assets/Bg.svg);
+  background-image: url("../assets/Bg.svg");
+  background-repeat: no-repeat;
+  /* Ensure the size and position are set correctly */
+  background-size: cover; /* or 100% 100%, depending on the desired effect */
+  background-position: center;
   background-repeat: no-repeat;
   font-family: Arial, sans-serif;
   display: flex;
