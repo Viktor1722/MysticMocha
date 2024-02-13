@@ -40,18 +40,12 @@ const SharePage = () => {
           "Do you want to download the snapshot to share on Instagram?"
         );
         if (userConsent) {
-          // Create a temporary link for the user to initiate the download
           const downloadLink = document.createElement("a");
           downloadLink.href = image;
           downloadLink.download = "snapshot.png";
-          // Append link to the body
           document.body.appendChild(downloadLink);
-          // Programmatically click the link to trigger the download
           downloadLink.click();
-          // Remove the link after downloading
           document.body.removeChild(downloadLink);
-
-          // Inform the user to manually share the image on Instagram
         }
       } catch (error) {
         console.error("Error taking snapshot: ", error);
