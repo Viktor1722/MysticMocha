@@ -149,7 +149,10 @@ function MainPage() {
               </svg>
             </a>
           </div>
-          <button onClick={goToSharePage}> to Share Page</button>{" "}
+          <button className="share-button" onClick={goToSharePage}>
+            {" "}
+            <b>Сподели</b>
+          </button>{" "}
         </div>
       )}
     </div>
