@@ -26,28 +26,36 @@ const SharePage = () => {
 
   useEffect(() => {}, [wish]);
 
-  const handleSnapshotAndRedirect = (redirectUrl) => {
-    const element = document.querySelector(".snapshot-area");
-    if (element) {
-      html2canvas(element).then((canvas) => {
+  const handleInstagramShare = async (e) => {
+    e.preventDefault(); // Prevent the default anchor link behavior
+
+    const snapshotElement = document.querySelector(".snapshot-area");
+    if (snapshotElement) {
+      try {
+        const canvas = await html2canvas(snapshotElement);
         // Convert the canvas to a data URL
-        const image = canvas
-          .toDataURL("image/png")
-          .replace("image/png", "image/octet-stream");
+        const image = canvas.toDataURL("image/png");
+        // Ask the user for consent to download the image
+        const userConsent = confirm(
+          "Do you want to download the snapshot to share on Instagram?"
+        );
+        if (userConsent) {
+          // Create a temporary link for the user to initiate the download
+          const downloadLink = document.createElement("a");
+          downloadLink.href = image;
+          downloadLink.download = "snapshot.png";
+          // Append link to the body
+          document.body.appendChild(downloadLink);
+          // Programmatically click the link to trigger the download
+          downloadLink.click();
+          // Remove the link after downloading
+          document.body.removeChild(downloadLink);
 
-        // Create a temporary link to trigger the download
-        const link = document.createElement("a");
-        link.download = "snapshot.png"; // You can name the file anything you want
-        link.href = image;
-        document.body.appendChild(link);
-        link.click();
-        document.body.removeChild(link);
-
-        // Delay the redirect to ensure the download dialog appears
-        setTimeout(() => {
-          window.location.href = redirectUrl;
-        }, 100); // Adjust delay as needed
-      });
+          // Inform the user to manually share the image on Instagram
+        }
+      } catch (error) {
+        console.error("Error taking snapshot: ", error);
+      }
     }
   };
 
@@ -94,9 +102,7 @@ const SharePage = () => {
               </a>
 
               <a
-                onClick={() =>
-                  handleSnapshotAndRedirect("https://www.instagram.com")
-                }
+                onClick={handleInstagramShare}
                 target="_blank"
                 className="submit-icon-box"
               >
