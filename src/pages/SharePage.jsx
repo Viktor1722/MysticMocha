@@ -13,6 +13,14 @@ const SharePage = () => {
   const [userPlan, setUserPlan] = useState("premium");
   const [fortune, setFortune] = useState("");
 
+  useEffect(() => {
+    const params = new URLSearchParams(window.location.search);
+    const featureSet = params.get("featureAccess");
+    if (featureSet && planFeatures[featureSet]) {
+      setUserPlan(featureSet);
+    }
+  }, []);
+
   const featureAccess = planFeatures[userPlan];
   const twitterShareUrl = `https://twitter.com/intent/tweet?text=${encodeURIComponent(
     fortune
