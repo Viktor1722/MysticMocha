@@ -34,31 +34,27 @@ const SharePage = () => {
 
   useEffect(() => {}, [wish]);
 
-  const handleDownload = async (e) => {
-    e.preventDefault();
+  const handleInstagramShare = async (e) => {
+    e.preventDefault(); // Prevent the default anchor link behavior
 
-    const isIOS =
-      /iPad|iPhone|iPod/.test(navigator.userAgent) && !window.MSStream;
-
-    if (isIOS) {
-      // For iOS: Display instructions for manual saving
-      alert("Tap and hold the image, then choose 'Add to Photos' to save it.");
-    } else {
-      // For non-iOS: Attempt direct download
-      const snapshotElement = document.querySelector(".snapshot-area");
-      if (snapshotElement) {
-        try {
-          const canvas = await html2canvas(snapshotElement);
-          const image = canvas.toDataURL("image/png");
-          const downloadLink = document.createElement("a");
-          downloadLink.href = image;
-          downloadLink.download = "snapshot.png"; // This works on Android
-          document.body.appendChild(downloadLink);
-          downloadLink.click();
-          document.body.removeChild(downloadLink);
-        } catch (error) {
-          console.error("Error taking snapshot: ", error);
-        }
+    const snapshotElement = document.querySelector(".snapshot-area");
+    if (snapshotElement) {
+      try {
+        const canvas = await html2canvas(snapshotElement);
+        // Convert the canvas to a data URL
+        const image = canvas.toDataURL("image/png");
+        // Ask the user for consent to download the image
+        alert(
+          "Tap and hold the image, then choose 'Add to Photos' to save it."
+        );
+        const downloadLink = document.createElement("a");
+        downloadLink.href = image;
+        downloadLink.download = "snapshot.png";
+        document.body.appendChild(downloadLink);
+        downloadLink.click();
+        document.body.removeChild(downloadLink);
+      } catch (error) {
+        console.error("Error taking snapshot: ", error);
       }
     }
   };
@@ -106,7 +102,7 @@ const SharePage = () => {
               </a>
 
               <a
-                onClick={handleDownload}
+                onClick={handleInstagramShare}
                 target="_blank"
                 className="submit-icon-box"
               >
