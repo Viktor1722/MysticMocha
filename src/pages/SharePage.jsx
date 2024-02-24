@@ -44,15 +44,16 @@ const SharePage = () => {
         // Convert the canvas to a data URL
         const image = canvas.toDataURL("image/png");
         // Ask the user for consent to download the image
-        alert(
-          "Tap and hold the image, then choose 'Add to Photos' to save it."
-        );
+
         const downloadLink = document.createElement("a");
         downloadLink.href = image;
-        downloadLink.download = "snapshot.png";
+        downloadLink.download = "Товоят късмет.png";
         document.body.appendChild(downloadLink);
         downloadLink.click();
         document.body.removeChild(downloadLink);
+        alert(
+          `Кликни отгоре където писше "Твоят късмет", за да запазиш снимката в галерията си`
+        );
       } catch (error) {
         console.error("Error taking snapshot: ", error);
       }
