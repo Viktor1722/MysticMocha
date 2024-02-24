@@ -44,40 +44,11 @@ const SharePage = () => {
         // Convert the canvas to a data URL
         const image = canvas.toDataURL("image/png");
         // Ask the user for consent to download the image
-        const userConsent = confirm(
-          "Do you want to download the snapshot to share on Instagram?"
-        );
-        if (userConsent) {
-          const downloadLink = document.createElement("a");
-          downloadLink.href = image;
-          downloadLink.download = "snapshot.png";
-          document.body.appendChild(downloadLink);
-          downloadLink.click();
-          document.body.removeChild(downloadLink);
-        }
+        window.open(image, "_blank");
       } catch (error) {
         console.error("Error taking snapshot: ", error);
       }
     }
-  };
-
-  const onDownloadImage = (src) => {
-    const img = new Image();
-    img.crossOrigin = "anonymous";
-    img.src = src;
-    img.onload = () => {
-      // create Canvas
-      const canvas = document.createElement("canvas");
-      const ctx = canvas.getContext("2d");
-      canvas.width = img.width;
-      canvas.height = img.height;
-      ctx.drawImage(img, 0, 0);
-      // for create tag anchor
-      const a = document.createElement("a");
-      a.download = `image-download`;
-      a.href = canvas.toDataURL("image/png");
-      a.click();
-    };
   };
 
   return (
@@ -122,8 +93,11 @@ const SharePage = () => {
                 </svg>
               </a>
 
-              <a href="#" onClick={() => onDownloadImage("url your image")}>
-                Downloa
+              <a
+                onClick={handleInstagramShare}
+                target="_blank"
+                className="submit-icon-box"
+              >
                 <svg
                   xmlns="http://www.w3.org/2000/svg"
                   width="32"
