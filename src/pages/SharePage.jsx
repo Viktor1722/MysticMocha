@@ -61,6 +61,25 @@ const SharePage = () => {
     }
   };
 
+  const onDownloadImage = (src) => {
+    const img = new Image();
+    img.crossOrigin = "anonymous";
+    img.src = src;
+    img.onload = () => {
+      // create Canvas
+      const canvas = document.createElement("canvas");
+      const ctx = canvas.getContext("2d");
+      canvas.width = img.width;
+      canvas.height = img.height;
+      ctx.drawImage(img, 0, 0);
+      // for create tag anchor
+      const a = document.createElement("a");
+      a.download = `image-download`;
+      a.href = canvas.toDataURL("image/png");
+      a.click();
+    };
+  };
+
   return (
     <div className="container">
       <div className="snapshot-area">
@@ -103,11 +122,8 @@ const SharePage = () => {
                 </svg>
               </a>
 
-              <a
-                onClick={handleInstagramShare}
-                target="_blank"
-                className="submit-icon-box"
-              >
+              <a href="#" onClick={() => onDownloadImage("url your image")}>
+                Downloa
                 <svg
                   xmlns="http://www.w3.org/2000/svg"
                   width="32"
