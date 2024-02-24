@@ -44,7 +44,13 @@ const SharePage = () => {
         // Convert the canvas to a data URL
         const image = canvas.toDataURL("image/png");
         // Ask the user for consent to download the image
-        window.open(image, "_blank");
+
+        const downloadLink = document.createElement("a");
+        downloadLink.href = image;
+        downloadLink.download = "snapshot.png";
+        document.body.appendChild(downloadLink);
+        downloadLink.click();
+        document.body.removeChild(downloadLink);
       } catch (error) {
         console.error("Error taking snapshot: ", error);
       }
