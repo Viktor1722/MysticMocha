@@ -11,6 +11,8 @@ function MainPage() {
   const [userPlan, setUserPlan] = useState("premium");
   const [wishes, setWishes] = useState([]);
 
+  const featureAccess = "premium";
+
   const captureWishCard = async () => {
     const cardElement = document.getElementById("flipCard");
     const canvas = await html2canvas(cardElement);
@@ -57,7 +59,8 @@ function MainPage() {
   }, []);
 
   const goToSharePage = () => {
-    navigate("/share", { state: { wish: fortune } }); // Pass fortune as state
+    // Here, ensure 'userPlan' or a dynamically determined feature access level is used
+    navigate(`/share?featureAccess=${userPlan}`, { state: { wish: fortune } });
   };
 
   return (
@@ -70,10 +73,16 @@ function MainPage() {
       </div>
       <br />
       <br />
-      <button className="share-button" onClick={goToSharePage}>
-        {" "}
-        <b>Сподели</b>
-      </button>{" "}
+      <div className="buttons-div">
+        <button className="share-button" onClick={goToSharePage}>
+          {" "}
+          <b>Сподели</b>
+        </button>{" "}
+        <button className="share-button" onClick={goToSharePage}>
+          {" "}
+          <b>Книга с ревюта</b>
+        </button>{" "}
+      </div>
     </div>
   );
 }

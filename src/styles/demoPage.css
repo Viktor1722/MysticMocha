@@ -41,7 +41,8 @@
   z-index: 2;
   display: flex;
   align-items: flex-end;
-  background-image: url("../assets/Cherry.png");
+  background-image: url("../assets/mysticMochaColored.svg");
+  background-size: 150px;
   background-repeat: no-repeat;
   background-position: center;
 }
@@ -62,4 +63,18 @@
 
 .hand-gesture {
   margin-bottom: 4px;
+}
+
+.share-button {
+  background-color: #ffffff;
+  color: #000000;
+  margin-top: 10px;
+  width: 200px;
+  display: flex;
+  align-items: center;
+  justify-content: space-around;
+}
+
+.nexus {
+  width: 100px;
 }

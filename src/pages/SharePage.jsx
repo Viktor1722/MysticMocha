@@ -7,6 +7,8 @@ import { getFirestore, collection, getDocs } from "firebase/firestore";
 import { db } from "../fireBaseConfig";
 import html2canvas from "html2canvas";
 
+const featureAccess = "premium";
+
 const SharePage = () => {
   const location = useLocation();
   const wish = location.state?.wish;
@@ -15,10 +17,8 @@ const SharePage = () => {
 
   useEffect(() => {
     const params = new URLSearchParams(window.location.search);
-    const featureSet = params.get("featureAccess");
-    if (featureSet && planFeatures[featureSet]) {
-      setUserPlan(featureSet);
-    }
+    const featureAccess = params.get("featureAccess");
+    setUserPlan(featureAccess || "basic"); // Default to "basic" if not specified
   }, []);
 
   const featureAccess = planFeatures[userPlan];
@@ -76,8 +76,8 @@ const SharePage = () => {
           </div>
         </div>
       </div>
-      <div className="share-container">
-        {featureAccess.socialMediaLinks && (
+      {userPlan !== "basic" && (
+        <div className="share-container">
           <div className="links-to-socialmedia">
             <div className="links-box">
               <a
@@ -137,10 +137,9 @@ const SharePage = () => {
               </a>
             </div>
           </div>
-        )}
-      </div>
+        </div>
+      )}
     </div>
   );
 };
-
 export default SharePage;
