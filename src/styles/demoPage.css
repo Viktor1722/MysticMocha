@@ -76,5 +76,10 @@
 }
 
 .nexus {
-  width: 100px;
+  width: 70px;
+}
+
+.buttons-div {
+  display: flex;
+  flex-direction: column;
 }
