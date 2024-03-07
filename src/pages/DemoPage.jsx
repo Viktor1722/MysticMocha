@@ -4,7 +4,7 @@ import { getFirestore, collection, getDocs } from "firebase/firestore";
 import { db } from "../fireBaseConfig";
 import html2canvas from "html2canvas";
 import { useNavigate } from "react-router-dom";
-import nexus from "../assets/nexus.svg";
+import nexus from "../assets/nexus2.jpg";
 
 function MainPage() {
   const navigate = useNavigate();
