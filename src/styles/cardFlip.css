@@ -46,6 +46,9 @@
   background-position: center;
 }
 
+.touch-icon {
+  width: 30px;
+}
 .flip-card-back {
   background-color: #fff; /* White background for the text */
   width: 170px;
