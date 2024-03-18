@@ -1,7 +1,7 @@
 import React, { useState, useEffect } from "react";
 import FlipCard from "./cardFlip";
 import { getFirestore, collection, getDocs } from "firebase/firestore";
-import { db } from "../fireBaseConfig";
+import { db } from "../fire-base-config";
 import html2canvas from "html2canvas";
 import { useNavigate } from "react-router-dom";
 
