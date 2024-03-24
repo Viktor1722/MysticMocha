@@ -12,11 +12,12 @@ const db = admin.firestore(); // If you are using Firestore
 const wishesData = readFileSync("src/data/new_wishes.json", "utf8");
 const newWishes = JSON.parse(wishesData);
 const docRef = db.collection("wishes").doc("3j4GhL2JWQMpIBw4tPx9");
+const wishesStrings = newWishes.map((wish) => wish.wish);
 
-newWishes.forEach(async (wish) => {
+wishesStrings.forEach(async (wishString) => {
   await docRef
     .update({
-      wishes: admin.firestore.FieldValue.arrayUnion(wish),
+      wishes: admin.firestore.FieldValue.arrayUnion(wishString),
     })
     .catch(console.error);
 });
