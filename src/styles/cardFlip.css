@@ -2,11 +2,11 @@
 
 .flip-card {
   background-color: transparent;
-  width: 200px; /* Adjust width as needed */
-  height: 200px; /* Adjust height as needed */
+  width: 200px;
+  height: 200px;
   perspective: 1000px;
-  border-radius: 20px; /* Rounded corners */
-  box-shadow: 0 4px 8px rgba(0, 0, 0, 0.1); /* Soft shadow */
+  border-radius: 20px;
+  box-shadow: 0 4px 8px rgba(0, 0, 0, 0.1);
 }
 
 .flip-card-inner {
@@ -50,13 +50,13 @@
   width: 30px;
 }
 .flip-card-back {
-  background-color: #fff; /* White background for the text */
+  background-color: #fff;
   width: 170px;
   height: 170px;
-  color: black; /* Text color */
+  color: black;
   transform: rotateY(180deg);
   z-index: 1;
-  padding: 20px; /* Padding for text */
+  padding: 20px;
 }
 
 .wishes {

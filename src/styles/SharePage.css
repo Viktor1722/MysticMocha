@@ -23,7 +23,8 @@
 
 .share-card {
   width: 290px;
-  height: 400px;
+  max-height: 450px;
+  min-height: 400px;
   background-color: #32323285;
   border-radius: 20px;
   padding-top: 30px;

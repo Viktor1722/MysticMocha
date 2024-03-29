@@ -5,6 +5,7 @@ import { db } from "../fire-base-config";
 import html2canvas from "html2canvas";
 import { useNavigate } from "react-router-dom";
 import nexus from "../assets/nexus2.jpg";
+import mocha from "../assets/mysticMocha.svg";
 
 function MainPage() {
   const navigate = useNavigate();
@@ -80,7 +81,7 @@ function MainPage() {
             <b>Последвай ни</b>
           </button>{" "}
         </a>
-        <a href="https://www.instagram.com/mysticmochas?igsh=MWNpc3A5M3ZvNnlhaA%3D%3D&utm_source=qr">
+        <a href="https://www.instagram.com/nexus.barbershop/">
           <button className="share-button" onClick={goToSharePage}>
             {" "}
             <img className="nexus" src={nexus} alt="follow nexus"></img>

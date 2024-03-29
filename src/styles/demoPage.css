@@ -1,4 +1,22 @@
 /* FlipCard.css */
+body {
+  background-image: url("../assets/bg-n.webp");
+}
+
+.container {
+  margin-bottom: 50px;
+}
+
+.flip-card-front {
+  background-color: #fff;
+  color: black;
+  z-index: 2;
+  display: flex;
+  align-items: flex-end;
+  background-image: url("../assets/mysticMocha.svg");
+  background-repeat: no-repeat;
+  background-position: center;
+}
 
 .flip-card {
   background-color: transparent;
@@ -55,10 +73,6 @@
   transform: rotateY(180deg);
   z-index: 1;
   padding: 20px; /* Padding for text */
-}
-
-.wishes {
-  font-size: 1.3rem;
 }
 
 .hand-gesture {
