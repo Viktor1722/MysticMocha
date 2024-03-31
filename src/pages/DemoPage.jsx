@@ -6,6 +6,7 @@ import html2canvas from "html2canvas";
 import { useNavigate } from "react-router-dom";
 import nexus from "../assets/nexus2.jpg";
 import mocha from "../assets/mysticMocha.svg";
+import touchIcon from "../assets/click.gif";
 
 function MainPage() {
   const navigate = useNavigate();
@@ -53,10 +54,15 @@ function MainPage() {
       <br />
       <br />
       <div className="flip-card-box">
-        <div className="flip-card" onClick={() => setIsFlipped(!isFlipped)}>
-          <div className={`flip-card-inner ${isFlipped ? "flipped" : ""}`}>
-            <div className="flip-card-front"></div>
-            <div className="flip-card-back">
+        <div
+          className="flip-card_demo"
+          onClick={() => setIsFlipped(!isFlipped)}
+        >
+          <div className={`flip-card-inner_demo ${isFlipped ? "flipped" : ""}`}>
+            <div className="flip-card-front_demo">
+              <img className="touch-icon" src={touchIcon} alt=""></img>
+            </div>
+            <div className="flip-card-back_demo">
               <h1 className="wishes">{fortune}</h1>
             </div>
           </div>
