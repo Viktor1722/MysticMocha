@@ -64,6 +64,8 @@ body {
   height: 170px;
   color: black; /* Text color */
   transform: rotateY(180deg);
+  display: flex;
+  align-items: center;
   z-index: 1;
   padding: 20px; /* Padding for text */
 }
