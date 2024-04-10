@@ -65,7 +65,16 @@ const SharePage = () => {
       <div className="snapshot-area">
         <div className="share-card">
           <div className="wish-container">
-            <FlipCard />
+            <div className="flip-card">
+              <div className="flip-card-inner">
+                <div className="flip-card-front">
+                  <img className="touch-icon" alt=""></img>
+                </div>
+                <div className="flip-card-back">
+                  <h1 className="wishes">{wish}</h1>
+                </div>
+              </div>
+            </div>
             <h1 className="wishes">{wish}</h1>
           </div>
           <div className="mystic-mocha">

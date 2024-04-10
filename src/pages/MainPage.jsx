@@ -64,26 +64,28 @@ function MainPage() {
   };
 
   return (
-    <div className="container">
-      <h2 className="title"> Kъсметче с кафето </h2>
-      <br />
-      <br />
-      <div className="flip-card-box">
-        <FlipCard wish={fortune} />
+    <main className="mainPage">
+      <div className="container">
+        <h2 className="title"> Kъсметче с кафето </h2>
+        <br />
+        <br />
+        <div className="flip-card-box">
+          <FlipCard wish={fortune} />
+        </div>
+        <br />
+        <br />
+        <div className="buttons-div">
+          <button className="share-button" onClick={goToSharePage}>
+            {" "}
+            <b>Сподели</b>
+          </button>{" "}
+          <button className="share-button" onClick={goToSharePage}>
+            {" "}
+            <b>Книга с ревюта</b>
+          </button>{" "}
+        </div>
       </div>
-      <br />
-      <br />
-      <div className="buttons-div">
-        <button className="share-button" onClick={goToSharePage}>
-          {" "}
-          <b>Сподели</b>
-        </button>{" "}
-        <button className="share-button" onClick={goToSharePage}>
-          {" "}
-          <b>Книга с ревюта</b>
-        </button>{" "}
-      </div>
-    </div>
+    </main>
   );
 }
 

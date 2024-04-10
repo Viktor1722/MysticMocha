@@ -1,6 +1,11 @@
 /* FlipCard.css */
-body {
-  background-image: url("../assets/bg-n.webp");
+.demoPage1 {
+  background-image: url("../assets/bg-nexus.webp");
+  -webkit-background-size: cover;
+  -moz-background-size: cover;
+  -o-background-size: cover;
+  background-size: cover;
+  overflow: hidden;
 }
 
 .container {
