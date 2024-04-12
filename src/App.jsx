@@ -7,6 +7,7 @@ import DemoPage from "./pages/DemoPage";
 import DemoPage2 from "./pages/DemoPage2";
 import DemoPage3 from "./pages/DemoPage3";
 import DemoPage4 from "./pages/DemoPage4";
+import DemoPage5 from "./pages/DemoPage5";
 import "./styles/SharePage.css";
 import "./styles/App.css";
 import "./styles/demoPage.css";
@@ -27,6 +28,7 @@ function App() {
             <Route path="/demo2" element={<DemoPage2 />} />
             <Route path="/demo3" element={<DemoPage3 />} />
             <Route path="/demo4" element={<DemoPage4 />} />
+            <Route path="/demo5" element={<DemoPage4 />} />
           </Routes>
         </Router>
       </FeatureAccessProvider>
