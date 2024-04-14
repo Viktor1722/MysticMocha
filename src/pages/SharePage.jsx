@@ -77,12 +77,11 @@ const SharePage = () => {
             </div>
             <h1 className="wishes">{wish}</h1>
           </div>
-          <div className="mystic-mocha-text-image">
-            <b>
-              <img src={logo} alt="mystic mocha logo" />
-              <p>Mystic Mocha</p>
-            </b>
-          </div>
+
+          <span className="mystic-mocha-text-image">
+            <img src={logo} alt="mystic mocha logo" />
+            <p>Mystic Mocha</p>
+          </span>
         </div>
       </div>
       {userPlan !== "basic" && (

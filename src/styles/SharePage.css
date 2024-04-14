@@ -47,15 +47,22 @@
 
 .mystic-mocha-text-image {
   display: flex;
-  margin: 10px;
-  font-size: small;
+  justify-content: flex-start;
   align-items: center;
+  flex-wrap: nowrap;
+  margin: 15px 30px;
+  font-size: small;
   filter: opacity(0.8);
 }
 
+.mystic-mocha-text-image b {
+  font-weight: 900;
+}
+
 .mystic-mocha-text-image img {
-  margin: 10px;
+  margin-right: 10px;
   width: 35px;
+  height: auto;
 }
 
 .share-container {
