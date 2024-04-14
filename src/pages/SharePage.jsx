@@ -77,7 +77,7 @@ const SharePage = () => {
             </div>
             <h1 className="wishes">{wish}</h1>
           </div>
-          <div className="mystic-mocha">
+          <div className="mystic-mocha-text-image">
             <img src={logo} alt="mystic mocha logo" />
             <b>
               <p>Mystic Mocha</p>

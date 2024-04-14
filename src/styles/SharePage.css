@@ -22,6 +22,8 @@
 }
 
 .share-card {
+  display: flex;
+  flex-direction: column;
   width: 290px;
   max-height: 450px;
   min-height: 400px;
@@ -43,15 +45,15 @@
   margin-top: 20px;
 }
 
-.mystic-mocha {
+.mystic-mocha-text-image {
   display: flex;
-  margin-top: 10px;
+  margin: 10px;
   font-size: small;
   align-items: center;
   filter: opacity(0.8);
 }
 
-.mystic-mocha img {
+.mystic-mocha-text-image img {
   margin: 10px;
   width: 35px;
 }
@@ -65,4 +67,13 @@
   height: 100px;
   text-align: center; /* Center the content */
   padding: 10px 0;
+}
+
+@media (max-width: 320px) {
+  .mystic-mocha-text-image img {
+    width: 30px; /* Smaller width for smaller screens */
+  }
+  .share-card {
+    padding: 20px; /* More padding for better spacing */
+  }
 }
