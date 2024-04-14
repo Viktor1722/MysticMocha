@@ -71,7 +71,7 @@
 
 @media (max-width: 320px) {
   .mystic-mocha-text-image img {
-    width: 30px; /* Smaller width for smaller screens */
+    width: 35px; /* Smaller width for smaller screens */
   }
   .share-card {
     padding: 20px; /* More padding for better spacing */
