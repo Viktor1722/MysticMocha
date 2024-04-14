@@ -68,12 +68,3 @@
   text-align: center; /* Center the content */
   padding: 10px 0;
 }
-
-@media (max-width: 320px) {
-  .mystic-mocha-text-image img {
-    width: 35px; /* Smaller width for smaller screens */
-  }
-  .share-card {
-    padding: 20px; /* More padding for better spacing */
-  }
-}
