@@ -6,8 +6,8 @@ import { getFirestore } from "firebase/firestore";
 
 // Your web app's Firebase configuration
 const firebaseConfig = {
-  apiKey: "AIzaSyDkuXN_cHktCO5iQ-dgddCiDPKmFGY0ssw",
-  authDomain: "lucky-coffee-eb037.firebaseapp.com",
+  apiKey: process.env.FIREBASE_API_KEY,
+  authDomain: process.env.AUTH_DOMAIN,
   projectId: "lucky-coffee-eb037",
   storageBucket: "lucky-coffee-eb037.appspot.com",
   messagingSenderId: "761554254202",
