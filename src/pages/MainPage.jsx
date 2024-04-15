@@ -1,4 +1,4 @@
-import Head from "next/head";
+import { Helmet } from "react-helmet";
 import React, { useState, useEffect } from "react";
 import FlipCard from "./cardFlip";
 import { getFirestore, collection, getDocs } from "firebase/firestore";
@@ -66,7 +66,7 @@ function MainPage() {
 
   return (
     <>
-      <Head>
+      <Helmet>
         <script
           async
           src="https://www.googletagmanager.com/gtag/js?id=G-Z0PB3KK7PF"
@@ -76,7 +76,7 @@ function MainPage() {
           {dataLayer.push(arguments)}
           gtag('js', new Date()); gtag('config', 'G-Z0PB3KK7PF');
         </script>
-      </Head>
+      </Helmet>
       <main className="mainPage">
         <div className="container">
           <h2 className="title"> Kъсметче с кафето </h2>
