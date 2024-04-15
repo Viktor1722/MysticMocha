@@ -1,4 +1,3 @@
-import { Helmet } from "react-helmet";
 import React, { useState, useEffect } from "react";
 import FlipCard from "./cardFlip";
 import { getFirestore, collection, getDocs } from "firebase/firestore";
@@ -65,47 +64,34 @@ function MainPage() {
   };
 
   return (
-    <>
-      <Helmet>
-        <script
-          async
-          src="https://www.googletagmanager.com/gtag/js?id=G-Z0PB3KK7PF"
-        ></script>
-        <script>
-          window.dataLayer = window.dataLayer || []; function gtag()
-          {dataLayer.push(arguments)}
-          gtag('js', new Date()); gtag('config', 'G-Z0PB3KK7PF');
-        </script>
-      </Helmet>
-      <main className="mainPage">
-        <div className="container">
-          <h2 className="title"> Kъсметче с кафето </h2>
-          <br />
-          <br />
-          <div className="flip-card-box">
-            <FlipCard wish={fortune} />
-          </div>
-          <br />
-          <br />
-          <div className="buttons-div">
-            <button className="share-button" onClick={goToSharePage}>
-              {" "}
-              <b>Сподели</b>
-            </button>{" "}
-            <button className="share-button">
-              {" "}
-              <a
-                className="link"
-                href="https://www.google.com/maps/place/Cherry+by+Mary/@43.1994378,27.9160161,691m/data=!3m1!1e3!4m8!3m7!1s0x40a4535612a32fbf:0xd5f4a465f325d1b!8m2!3d43.1994378!4d27.918591!9m1!1b1!16s%2Fg%2F11y1cdmk7k?entry=ttu"
-              >
-                {" "}
-                <b>Книга с ревюта</b>
-              </a>
-            </button>{" "}
-          </div>
+    <main className="mainPage">
+      <div className="container">
+        <h2 className="title"> Kъсметче с кафето </h2>
+        <br />
+        <br />
+        <div className="flip-card-box">
+          <FlipCard wish={fortune} />
         </div>
-      </main>
-    </>
+        <br />
+        <br />
+        <div className="buttons-div">
+          <button className="share-button" onClick={goToSharePage}>
+            {" "}
+            <b>Сподели</b>
+          </button>{" "}
+          <button className="share-button">
+            {" "}
+            <a
+              className="link"
+              href="https://www.google.com/maps/place/Cherry+by+Mary/@43.1994378,27.9160161,691m/data=!3m1!1e3!4m8!3m7!1s0x40a4535612a32fbf:0xd5f4a465f325d1b!8m2!3d43.1994378!4d27.918591!9m1!1b1!16s%2Fg%2F11y1cdmk7k?entry=ttu"
+            >
+              {" "}
+              <b>Книга с ревюта</b>
+            </a>
+          </button>{" "}
+        </div>
+      </div>
+    </main>
   );
 }
 
