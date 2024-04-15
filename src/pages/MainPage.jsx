@@ -83,7 +83,7 @@ function MainPage() {
             {" "}
             <a
               className="link"
-              href="https://www.google.com/maps/place/Cherry+by+Mary/@43.2044838,27.9190019,692m/data=!3m1!1e3!4m8!3m7!1s0x40a4551d2e10fb85:0x518af4d8d4b7711!8m2!3d43.2044838!4d27.9215768!9m1!1b1!16s%2Fg%2F11qz39lctt?entry=ttu"
+              href="https://www.google.com/maps/place/Cherry+by+Mary/@43.1994378,27.9160161,691m/data=!3m1!1e3!4m8!3m7!1s0x40a4535612a32fbf:0xd5f4a465f325d1b!8m2!3d43.1994378!4d27.918591!9m1!1b1!16s%2Fg%2F11y1cdmk7k?entry=ttu"
             >
               {" "}
               <b>Книга с ревюта</b>
