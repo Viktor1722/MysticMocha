@@ -67,12 +67,12 @@ function MainPage() {
     <main className="mainPage">
       <script
         async
-        src="https://www.googletagmanager.com/gtag/js?id=G-85BJ1XX12F"
+        src="https://www.googletagmanager.com/gtag/js?id=G-Z0PB3KK7PF"
       ></script>
       <script>
         window.dataLayer = window.dataLayer || []; function gtag()
         {dataLayer.push(arguments)}
-        gtag('js', new Date()); gtag('config', 'G-85BJ1XX12F');
+        gtag('js', new Date()); gtag('config', 'G-Z0PB3KK7PF');
       </script>
       <div className="container">
         <h2 className="title"> Kъсметче с кафето </h2>
