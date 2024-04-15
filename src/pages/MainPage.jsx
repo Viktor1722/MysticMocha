@@ -65,6 +65,15 @@ function MainPage() {
 
   return (
     <main className="mainPage">
+      <script
+        async
+        src="https://www.googletagmanager.com/gtag/js?id=G-85BJ1XX12F"
+      ></script>
+      <script>
+        window.dataLayer = window.dataLayer || []; function gtag()
+        {dataLayer.push(arguments)}
+        gtag('js', new Date()); gtag('config', 'G-85BJ1XX12F');
+      </script>
       <div className="container">
         <h2 className="title"> Kъсметче с кафето </h2>
         <br />
