@@ -43,6 +43,7 @@
 .wishes {
   width: 220px;
   margin-top: 20px;
+  color: white;
 }
 
 .mystic-mocha-text-image {
@@ -74,4 +75,15 @@
   height: 100px;
   text-align: center; /* Center the content */
   padding: 10px 0;
+}
+
+.overlay {
+  position: fixed; /* Fix the overlay position */
+  display: flex;
+  justify-content: center;
+  align-items: flex-start; /* Align items to the top */
+  width: 100%;
+  height: 100%;
+  background-color: rgba(0, 0, 0, 0.5);
+  z-index: 1000;
 }
