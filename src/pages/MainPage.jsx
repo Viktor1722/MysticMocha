@@ -8,7 +8,7 @@ import { useNavigate } from "react-router-dom";
 function MainPage() {
   const navigate = useNavigate();
   const [fortune, setFortune] = useState("");
-  const [userPlan, setUserPlan] = useState("premium");
+  const [userPlan, setUserPlan] = useState("basic");
   const [wishes, setWishes] = useState([]);
 
   const featureAccess = "premium";

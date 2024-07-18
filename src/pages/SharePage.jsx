@@ -75,12 +75,10 @@ const SharePage = () => {
                 <div className="flip-card-front">
                   <img className="touch-icon" alt="" />
                 </div>
-                <div className="flip-card-back">
-                  <h1 className="wishes">{wish}</h1>
-                </div>
+                <div className="flip-card-back"></div>
               </div>
             </div>
-            <h1 className="wishes">{wish}</h1>
+            <h1 className="wishes_sharePage">{wish}</h1>
           </div>
 
           <span className="mystic-mocha-text-image">

@@ -59,8 +59,9 @@
   padding: 20px;
 }
 
-.wishes {
+.wishes_cardFlip {
   font-size: 1.2rem;
+  color: black;
 }
 
 .hand-gesture {

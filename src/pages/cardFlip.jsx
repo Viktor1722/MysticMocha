@@ -12,7 +12,7 @@ const CardFlip = ({ wish }) => {
           <img className="touch-icon" src={touchIcon} alt=""></img>
         </div>
         <div className="flip-card-back">
-          <h1 className="wishes">{wish}</h1>
+          <h1 className="wishes_cardFlip">{wish}</h1>
         </div>
       </div>
     </div>
