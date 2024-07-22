@@ -20,15 +20,7 @@ function MainPage() {
     return image;
   };
 
-  const downloadImage = async () => {
-    const image = await captureWishCard();
-    const link = document.createElement("a");
-    link.href = image;
-    link.download = "wish.png";
-    document.body.appendChild(link);
-    link.click();
-    document.body.removeChild(link);
-  };
+ 
 
   useEffect(() => {
     const fetchWishes = async () => {
