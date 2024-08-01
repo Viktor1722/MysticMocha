@@ -11,7 +11,7 @@ admin.initializeApp({
 const db = admin.firestore(); // If you are using Firestore
 const wishesData = readFileSync("src/data/new_wishes.json", "utf8");
 const newWishes = JSON.parse(wishesData);
-const docRef = db.collection("wishes").doc("3j4GhL2JWQMpIBw4tPx9");
+const docRef = db.collection("wishes").doc("3j4GhL2JWQMpIBw4tPx9"); // in order to push wishes to different collection just change the name in the collection and change the val in the doc also
 const wishesStrings = newWishes.map((wish) => wish.wish);
 
 wishesStrings.forEach(async (wishString) => {

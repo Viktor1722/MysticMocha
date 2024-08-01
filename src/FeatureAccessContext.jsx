@@ -1,6 +1,8 @@
+// FeatureAccessProvider.js
 import React, { createContext, useContext, useState, useEffect } from "react";
 import { useUser } from "@clerk/clerk-react";
 import { db } from "./fire-base-config";
+import { doc, getDoc } from "firebase/firestore";
 
 const FeatureAccessContext = createContext();
 
@@ -9,18 +11,17 @@ export function useFeatureAccess() {
 }
 
 export const FeatureAccessProvider = ({ children }) => {
-  const [featureAccess, setFeatureAccess] = useState("premium"); // Default value
+  const [featureAccess, setFeatureAccess] = useState("basic"); // Default value
   const { user } = useUser();
 
   useEffect(() => {
     if (user) {
       const userId = user.id;
-      const userDocRef = db.collection("users").doc(userId);
+      const userDocRef = doc(db, "users", userId);
 
-      userDocRef
-        .get()
+      getDoc(userDocRef)
         .then((doc) => {
-          if (doc.exists) {
+          if (doc.exists()) {
             const userData = doc.data();
             if (userData.featureAccess) {
               setFeatureAccess(userData.featureAccess);

@@ -20,7 +20,7 @@ const SharePage = () => {
   useEffect(() => {
     const params = new URLSearchParams(window.location.search);
     const featureAccess = params.get("featureAccess");
-    setUserPlan(featureAccess || "basic"); // Default to "basic" if not specified
+    setUserPlan(featureAccess || "premium"); // Default to "basic" if not specified
   }, []);
 
   const featureAccess = planFeatures[userPlan];
