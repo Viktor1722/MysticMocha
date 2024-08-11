@@ -10,7 +10,6 @@ function MainPage() {
   const navigate = useNavigate();
   const [fortune, setFortune] = useState("");
   const [wishes, setWishes] = useState([]);
-
   const { featureAccess } = useFeatureAccess();
 
   const captureWishCard = async () => {
@@ -23,34 +22,30 @@ function MainPage() {
   useEffect(() => {
     const fetchWishes = async () => {
       try {
-        const docRef = collection(db, "user plans");
-        const docSnap = await getDocs(docRef);
-        let fetchedWishes = [];
+        const querySnapshot = await getDocs(collection(db, "wishes"));
+        if (!querySnapshot.empty) {
+          const wishesDoc = querySnapshot.docs[0];
+          if (wishesDoc.exists()) {
+            const fetchedWishes = wishesDoc.data().wishes;
+            setWishes(fetchedWishes);
 
-        if (docSnap.exists) {
-          const data = docSnap.data();
-          if (featureAccess in data) {
-            fetchedWishes = data[featureAccess];
-          } else {
-            console.log("Feature access level not found");
+            const randomIndex = Math.floor(
+              Math.random() * fetchedWishes.length
+            );
+            const randomWish = fetchedWishes[randomIndex];
+            setFortune(randomWish);
+            console.log("Random wish:", randomWish);
           }
         } else {
-          console.log("No such document!");
+          console.log("No documents found in 'wishes' collection");
         }
-
-        setWishes(fetchedWishes);
-
-        const randomIndex = Math.floor(Math.random() * fetchedWishes.length);
-        const randomWish = fetchedWishes[randomIndex];
-        setFortune(randomWish);
-        console.log("Random wish:", randomWish);
       } catch (error) {
         console.error("Error fetching wishes:", error);
       }
     };
 
     fetchWishes();
-  }, [featureAccess]);
+  }, []);
 
   const goToSharePage = () => {
     navigate(`/share?featureAccess=${featureAccess}`, {

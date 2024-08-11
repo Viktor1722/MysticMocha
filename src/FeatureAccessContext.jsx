@@ -1,4 +1,3 @@
-// FeatureAccessProvider.js
 import React, { createContext, useContext, useState, useEffect } from "react";
 import { useUser } from "@clerk/clerk-react";
 import { db } from "./fire-base-config";

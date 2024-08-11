@@ -1,6 +1,5 @@
 import React, { useEffect, useState } from "react";
 import { useLocation } from "react-router-dom";
-import FlipCard from "./cardFlip";
 import planFeatures from "../planConfig";
 import logo from "../assets/mysticMocha.svg";
 import { getFirestore, collection, getDocs } from "firebase/firestore";
